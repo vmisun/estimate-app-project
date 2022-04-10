@@ -16,7 +16,7 @@ export default function Header() {
             <i class="fa-brands fa-github"></i>
           </a>
           <a
-            href="https://github.com/vmisun/estimate-app-project"
+            href="https://github.com/vmisun/estimate-webapp"
             target="_blank"
             title="Sprawdź kod tutaj"
           >
