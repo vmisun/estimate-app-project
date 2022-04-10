@@ -7,21 +7,21 @@ Form {
   margin: 0 auto;
 }
 
-Table {
+.numbered Table {
   counter-reset: row-num-1;
   max-width: 80%;
   margin: 0 auto;
 }
 
-Table tr {
+.numbered Table tr {
   counter-increment: row-num;
 }
 
-Table tr td:first-child::before {
+.numbered Table tr td:first-child::before {
   content: counter(row-num) ". ";
 }
 
-tbody {
+.numbered tbody {
   text-align: right;
 }
 
@@ -29,11 +29,16 @@ thead {
   text-align: center;
 }
 
-td {
+th {
   width: 15%;
 }
 
+td {
+  hyphens: auto;
+}
+
 Button {
+  width: 100%;
   background: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);
 }
 
@@ -43,11 +48,15 @@ Button {
   position: sticky;
   bottom: 0;
   border: 1px solid #6a85b6;
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
-#number,
+.number,
 #delete {
   width: 5%;
+  text-align: center;
 }
 
 #bin {

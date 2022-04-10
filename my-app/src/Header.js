@@ -4,7 +4,7 @@ import { Navbar, Container } from "react-bootstrap";
 
 export default function Header() {
   return (
-    <Navbar class="navbar fixed-top justify-content-between">
+    <Navbar class="navbar justify-content-between">
       <Container>
         <h5 className="ms-3 mt-0 mb-0">Karolina Gniadzik</h5>
         <div className="left">
@@ -19,9 +19,8 @@ export default function Header() {
             href="https://github.com/vmisun/estimate-app-project"
             target="_blank"
             title="Sprawdź kod tutaj"
-            class="material-icons-outlined"
           >
-            code
+            <i class="fa-solid fa-code"></i>
           </a>
           <a
             href="mailto:karolina.gniadzik@icloud.com"

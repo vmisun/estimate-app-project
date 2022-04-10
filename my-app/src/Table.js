@@ -64,8 +64,8 @@ export default function Items() {
       <Header />
 
       <Form className="mt-3" onSubmit={(event) => updateTableData(event)}>
-        <Row className="mt-3 mb-3">
-          <Col>
+        <Row>
+          <Form.Group className="mb-3 col-sm-6">
             <Form.Control
               type="text"
               placeholder="Nazwa pozycji"
@@ -73,8 +73,8 @@ export default function Items() {
               onChange={(event) => setName(event.target.value)}
               required
             />
-          </Col>
-          <Col>
+          </Form.Group>
+          <Form.Group className="mb-3 col-sm-6">
             <Form.Control
               type="text"
               placeholder="Opis"
@@ -82,10 +82,8 @@ export default function Items() {
               onChange={(event) => setDes(event.target.value)}
               required
             />
-          </Col>
-        </Row>
-        <Row className="mt-3 mb-3">
-          <Col>
+          </Form.Group>
+          <Form.Group className="mb-3 col-lg-6">
             <Form.Select
               value={Category}
               onChange={(event) => setCategory(event.target.value)}
@@ -101,8 +99,8 @@ export default function Items() {
               <option value="Oprogramowanie">Oprogramowanie</option>
               <option value="Inne">Inne</option>
             </Form.Select>
-          </Col>
-          <Col>
+          </Form.Group>
+          <Form.Group className="mb-3 col-sm-6 col-lg-2">
             <Form.Control
               type="number"
               min="0"
@@ -112,8 +110,8 @@ export default function Items() {
               onChange={(event) => setPrice(event.target.value)}
               required
             />
-          </Col>
-          <Col>
+          </Form.Group>
+          <Form.Group className="mb-3 col-sm-6 col-lg-2">
             <Form.Control
               type="number"
               min="0"
@@ -124,58 +122,63 @@ export default function Items() {
               onChange={(event) => setQuantity(event.target.value)}
               required
             />
-          </Col>
-          <Col>
-            <Button type="submit" className="mt-sm-0 mt-3">
-              Zatwierdź
-            </Button>
-          </Col>
+          </Form.Group>
+          <Form.Group className="mb-3 col-sm-12 col-lg-2">
+            <Button type="submit">Zatwierdź</Button>
+          </Form.Group>
         </Row>
       </Form>
 
-      <Table striped bordered hover size="sm" responsive="sm">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Nazwa</th>
-            <th>Opis</th>
-            <th>Kategoria</th>
-            <th>Cena za szt. [zł]</th>
-            <th>Ilość</th>
-            <th>Cena łącznie [zł]</th>
-            <th id="delete"></th>
-          </tr>
-        </thead>
-        <tbody>
-          {tableData
-            ? tableData.map((item, index) => {
-                return (
-                  <tr>
-                    <td id="number"></td>
-                    <td>{item.Name}</td>
-                    <td>{item.Des}</td>
-                    <td>{item.Category}</td>
-                    <td>{Number(item.Price).toFixed(2)}</td>
-                    <td>{item.Quantity}</td>
-                    <td>
-                      {(Number(item.Quantity) * Number(item.Price)).toFixed(2)}
-                    </td>
-                    <td onClick={() => deleteItem(item, index)}>
-                      <span className="material-icons-outlined" id="bin">
-                        delete
-                      </span>
-                    </td>
-                  </tr>
-                );
-              })
-            : null}
-        </tbody>
-      </Table>
+      <div className="numbered mb-3">
+        <Table striped bordered hover size="sm" responsive="sm">
+          <thead>
+            <tr>
+              <th className="number">#</th>
+              <th>Nazwa</th>
+              <th>Opis</th>
+              <th>Kategoria</th>
+              <th>Cena za szt. [zł]</th>
+              <th>Ilość</th>
+              <th>Cena łącznie [zł]</th>
+              <th id="delete"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {tableData
+              ? tableData.map((item, index) => {
+                  return (
+                    <tr>
+                      <td className="number"></td>
+                      <td>{item.Name}</td>
+                      <td>{item.Des}</td>
+                      <td>{item.Category}</td>
+                      <td>{Number(item.Price).toFixed(2)}</td>
+                      <td>{item.Quantity}</td>
+                      <td>
+                        {(Number(item.Quantity) * Number(item.Price)).toFixed(
+                          2
+                        )}
+                      </td>
+                      <td onClick={() => deleteItem(item, index)}>
+                        <span className="material-icons-outlined" id="bin">
+                          delete
+                        </span>
+                      </td>
+                    </tr>
+                  );
+                })
+              : null}
+          </tbody>
+        </Table>
+      </div>
+
       <Table className="summary">
         <tbody>
-          <td className="col-6">Podsumowanie</td>
-          <td className="col-3">Łącznie {sumQuantity} szt.</td>
-          <td className="col-3">{sum} zł</td>
+          <tr>
+            <td>Łącznie:</td>
+            <td>{sumQuantity} szt.</td>
+            <td>{sum} zł</td>
+          </tr>
         </tbody>
       </Table>
     </Container>
