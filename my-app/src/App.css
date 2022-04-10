@@ -21,3 +21,9 @@ body {
     #e8f5fd
   );
 }
+
+th,
+td {
+  height: 100%;
+  vertical-align: middle;
+}
