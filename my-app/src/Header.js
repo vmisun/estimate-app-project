@@ -25,7 +25,7 @@ export default function Header() {
           <a
             href="mailto:karolina.gniadzik@icloud.com"
             class="col-sm-6 mt-3"
-            title="Napisz e-mail Karolina Gniadzik"
+            title="Napisz e-mail do autora"
           >
             <i class="fa-solid fa-at"></i>
           </a>
