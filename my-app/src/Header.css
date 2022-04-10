@@ -1,0 +1,19 @@
+.navbar {
+  background: #bac8e0;
+  color: #0062b9;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+  margin-right: 20px;
+  margin-top: 5px;
+  margin-bottom: 0;
+  text-align: center;
+  color: #0062b9;
+}

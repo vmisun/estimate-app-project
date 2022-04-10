@@ -1,0 +1,55 @@
+Container {
+  width: 100%;
+}
+
+Form {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+Table {
+  counter-reset: row-num-1;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+Table tr {
+  counter-increment: row-num;
+}
+
+Table tr td:first-child::before {
+  content: counter(row-num) ". ";
+}
+
+tbody {
+  text-align: right;
+}
+
+thead {
+  text-align: center;
+}
+
+td {
+  width: 15%;
+}
+
+Button {
+  background: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);
+}
+
+.summary {
+  background: #cfd9df;
+  font-size: 18px;
+  position: sticky;
+  bottom: 0;
+  border: 1px solid #6a85b6;
+}
+
+#number,
+#delete {
+  width: 5%;
+}
+
+#bin {
+  cursor: pointer;
+}
